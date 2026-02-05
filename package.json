@@ -1,8 +1,16 @@
 {
-  "name": "ecnoor",
+  "name": "forecastle",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
+  "description": "Forecastle - Premium Fashion & Coffee House",
+  "author": "STFvi",
+  "license": "MIT",
+  "homepage": "https://stfvi.github.io/FORECASTLE/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/STFvi/FORECASTLE.git"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
