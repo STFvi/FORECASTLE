@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useCart } from '../../context/CartContext';
 import QuickView from '../QuickView/QuickView';
 import CheckoutModal from '../CheckoutModal/CheckoutModal';
@@ -243,12 +244,12 @@ const ProductShowcase = () => {
 
                 {/* View All CTA */}
                 <div className="products__cta">
-                    <a href="#all-products" className="btn btn-secondary">
+                    <Link to="/products" className="btn btn-secondary" onClick={() => window.scrollTo(0, 0)}>
                         View All Products
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                             <path d="M5 12h14M12 5l7 7-7 7" />
                         </svg>
-                    </a>
+                    </Link>
                 </div>
             </div>
 

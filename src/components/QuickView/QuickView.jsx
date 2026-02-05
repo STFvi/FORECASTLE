@@ -1,9 +1,11 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useCart } from '../../context/CartContext';
+import CheckoutModal from '../CheckoutModal/CheckoutModal';
 import './QuickView.css';
 
 const QuickView = ({ product, isOpen, onClose }) => {
     const { addToCart } = useCart();
+    const [showCheckout, setShowCheckout] = useState(false);
 
     useEffect(() => {
         if (isOpen) {
@@ -28,6 +30,16 @@ const QuickView = ({ product, isOpen, onClose }) => {
 
     const handleAddToCart = () => {
         addToCart(product);
+        onClose();
+    };
+
+    const handleBuyNow = () => {
+        addToCart(product);
+        setShowCheckout(true);
+    };
+
+    const handleCheckoutClose = () => {
+        setShowCheckout(false);
         onClose();
     };
 
@@ -89,18 +101,33 @@ const QuickView = ({ product, isOpen, onClose }) => {
                         </div>
                     </div>
 
-                    {/* Add to Cart Button */}
-                    <button className="quick-view__add-btn" onClick={handleAddToCart}>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
-                            <line x1="3" y1="6" x2="21" y2="6" />
-                            <path d="M16 10a4 4 0 01-8 0" />
-                        </svg>
-                        <span>Add to Cart</span>
-                        <span className="quick-view__add-btn-price">৳{product.price}</span>
-                    </button>
+                    {/* Action Buttons */}
+                    <div className="quick-view__actions">
+                        <button className="quick-view__add-btn" onClick={handleAddToCart}>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+                                <line x1="3" y1="6" x2="21" y2="6" />
+                                <path d="M16 10a4 4 0 01-8 0" />
+                            </svg>
+                            <span>Add to Cart</span>
+                        </button>
+                        <button className="quick-view__buy-btn" onClick={handleBuyNow}>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                                <polyline points="22 4 12 14.01 9 11.01" />
+                            </svg>
+                            <span>Buy Now</span>
+                            <span className="quick-view__buy-btn-price">৳{product.price}</span>
+                        </button>
+                    </div>
                 </div>
             </div>
+
+            {/* Checkout Modal */}
+            <CheckoutModal
+                isOpen={showCheckout}
+                onClose={handleCheckoutClose}
+            />
         </div>
     );
 };

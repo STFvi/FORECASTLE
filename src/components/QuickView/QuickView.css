@@ -186,27 +186,59 @@
     flex-shrink: 0;
 }
 
-/* Add to Cart Button - Artistic Premium Style */
+/* Action Buttons Container */
+.quick-view__actions {
+    display: flex;
+    gap: var(--space-3);
+    margin-top: auto;
+}
+
+/* Add to Cart Button */
 .quick-view__add-btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: var(--space-3);
-    padding: var(--space-4) var(--space-6);
+    gap: var(--space-2);
+    flex: 1;
+    padding: var(--space-4) var(--space-5);
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.quick-view__add-btn:hover {
+    background: var(--color-gold);
+    color: var(--bg-primary);
+    border-color: var(--color-gold);
+    transform: translateY(-2px);
+}
+
+/* Buy Now Button - Primary CTA */
+.quick-view__buy-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    flex: 1.5;
+    padding: var(--space-4) var(--space-5);
     background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-dark) 100%);
     border: none;
     border-radius: var(--radius-lg);
-    font-size: var(--text-base);
+    font-size: var(--text-sm);
     font-weight: var(--font-bold);
     color: var(--bg-primary);
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
-    margin-top: auto;
 }
 
-.quick-view__add-btn::before {
+.quick-view__buy-btn::before {
     content: '';
     position: absolute;
     top: 0;
@@ -217,81 +249,102 @@
     transition: left 0.5s ease;
 }
 
-.quick-view__add-btn:hover::before {
+.quick-view__buy-btn:hover::before {
     left: 100%;
 }
 
-.quick-view__add-btn:hover {
+.quick-view__buy-btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 30px rgba(201, 168, 118, 0.5);
 }
 
-.quick-view__add-btn-price {
+.quick-view__buy-btn-price {
     margin-left: auto;
-    padding-left: var(--space-4);
+    padding-left: var(--space-3);
     border-left: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-/* Light Mode */
+/* Light Mode - White and Gray Only */
 [data-theme="light"] .quick-view-overlay {
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.5);
 }
 
 [data-theme="light"] .quick-view {
-    background: var(--bg-primary);
-    border-color: rgba(92, 74, 61, 0.2);
+    background: #ffffff;
+    border-color: #e5e5e5;
 }
 
 [data-theme="light"] .quick-view__close {
-    background: rgba(0, 0, 0, 0.1);
-    color: var(--text-primary);
+    background: #f5f5f5;
+    color: #333333;
+}
+
+[data-theme="light"] .quick-view__close:hover {
+    background: #333333;
+    color: #ffffff;
 }
 
 [data-theme="light"] .quick-view__image-container {
-    background: #F8F5EF;
+    background: #f8f8f8;
 }
 
 [data-theme="light"] .quick-view__category {
-    color: var(--color-gold-dark);
+    color: #666666;
 }
 
 [data-theme="light"] .quick-view__name {
-    color: #1a1512;
+    color: #1a1a1a;
 }
 
 [data-theme="light"] .quick-view__price {
-    color: var(--color-gold-dark);
+    color: #333333;
 }
 
 [data-theme="light"] .quick-view__original-price {
-    color: #888;
+    color: #999999;
 }
 
 [data-theme="light"] .quick-view__description {
-    color: #5c4a3d;
+    color: #666666;
 }
 
 [data-theme="light"] .quick-view__features {
-    background: #F8F5EF;
-    border-color: rgba(92, 74, 61, 0.15);
+    background: #f8f8f8;
+    border-color: #e5e5e5;
 }
 
 [data-theme="light"] .quick-view__feature {
-    color: #5c4a3d;
+    color: #666666;
 }
 
 [data-theme="light"] .quick-view__feature svg {
-    color: var(--color-gold-dark);
+    color: #333333;
 }
 
 [data-theme="light"] .quick-view__add-btn {
-    background: linear-gradient(135deg, var(--color-gold-dark) 0%, #5c4a3d 100%);
-    color: white;
+    background: #f5f5f5;
+    border-color: #e0e0e0;
+    color: #333333;
+}
+
+[data-theme="light"] .quick-view__add-btn:hover {
+    background: #333333;
+    color: #ffffff;
+    border-color: #333333;
+}
+
+[data-theme="light"] .quick-view__buy-btn {
+    background: linear-gradient(135deg, #333333 0%, #1a1a1a 100%);
+    color: #ffffff;
+}
+
+[data-theme="light"] .quick-view__buy-btn:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 [data-theme="light"] .quick-view__badge {
-    background: var(--color-gold-dark);
-    color: white;
+    background: #333333;
+    color: #ffffff;
 }
 
 /* Responsive */
