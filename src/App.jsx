@@ -54,7 +54,7 @@ function App() {
   return (
     <ThemeProvider>
       <CartProvider>
-        <BrowserRouter>
+        <BrowserRouter basename="/FORECASTLE">
           <div className="app">
             <Navbar />
             <main>
