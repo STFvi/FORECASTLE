@@ -1,0 +1,272 @@
+.cafe-page {
+    min-height: 100vh;
+    background: var(--bg-primary);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   HERO
+═══════════════════════════════════════════════════════════════ */
+
+.cafe-hero {
+    position: relative;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, #1a1512 0%, #0d0b09 100%);
+    overflow: hidden;
+}
+
+.cafe-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at 30% 50%, rgba(201, 168, 118, 0.1) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 30%, rgba(92, 74, 61, 0.15) 0%, transparent 50%);
+}
+
+.cafe-hero__content {
+    position: relative;
+    text-align: center;
+    padding: var(--space-8);
+    max-width: 800px;
+    z-index: 10;
+}
+
+.cafe-hero__badge {
+    display: inline-block;
+    padding: var(--space-2) var(--space-4);
+    background: rgba(201, 168, 118, 0.1);
+    border: 1px solid rgba(201, 168, 118, 0.3);
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--color-gold);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-widest);
+    margin-bottom: var(--space-6);
+}
+
+.cafe-hero__title {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--space-4);
+    line-height: 1.2;
+}
+
+.cafe-hero__subtitle {
+    font-size: var(--text-lg);
+    color: var(--text-secondary);
+    line-height: var(--leading-relaxed);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   MENU
+═══════════════════════════════════════════════════════════════ */
+
+.cafe-menu {
+    padding: var(--space-24) 0;
+}
+
+.cafe-menu__header {
+    text-align: center;
+    margin-bottom: var(--space-16);
+}
+
+.cafe-menu__title {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: var(--text-4xl);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--space-3);
+}
+
+.cafe-menu__subtitle {
+    font-size: var(--text-lg);
+    color: var(--text-tertiary);
+}
+
+.cafe-menu__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--space-12);
+}
+
+.cafe-menu__category {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-2xl);
+    padding: var(--space-8);
+}
+
+.cafe-menu__category-title {
+    font-size: var(--text-xl);
+    font-weight: var(--font-semibold);
+    color: var(--color-gold);
+    margin-bottom: var(--space-6);
+    padding-bottom: var(--space-4);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.cafe-menu__items {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.cafe-menu__item {
+    padding: var(--space-4);
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-base);
+}
+
+.cafe-menu__item:hover {
+    background: var(--bg-card-hover);
+    transform: translateX(4px);
+}
+
+.cafe-menu__item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-2);
+}
+
+.cafe-menu__item-name {
+    font-weight: var(--font-semibold);
+    color: var(--text-primary);
+}
+
+.cafe-menu__item-price {
+    font-family: var(--font-mono);
+    font-weight: var(--font-semibold);
+    color: var(--color-gold);
+}
+
+.cafe-menu__item-desc {
+    font-size: var(--text-sm);
+    color: var(--text-tertiary);
+}
+
+.cafe-menu__item--simple {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   INFO
+═══════════════════════════════════════════════════════════════ */
+
+.cafe-info {
+    padding: var(--space-16) 0;
+    background: var(--bg-secondary);
+}
+
+.cafe-info__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-6);
+}
+
+.cafe-info__card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xl);
+    padding: var(--space-8);
+    text-align: center;
+    transition: all var(--transition-base);
+}
+
+.cafe-info__card:hover {
+    border-color: var(--color-gold);
+    transform: translateY(-4px);
+}
+
+.cafe-info__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    background: rgba(201, 168, 118, 0.1);
+    border-radius: var(--radius-full);
+    color: var(--color-gold);
+    margin-bottom: var(--space-4);
+}
+
+.cafe-info__card h3 {
+    font-size: var(--text-xl);
+    font-weight: var(--font-semibold);
+    color: var(--text-primary);
+    margin-bottom: var(--space-3);
+}
+
+.cafe-info__card p {
+    font-size: var(--text-base);
+    color: var(--text-secondary);
+    margin-bottom: var(--space-1);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   BACK BUTTON
+═══════════════════════════════════════════════════════════════ */
+
+.cafe-back {
+    padding: var(--space-8);
+    text-align: center;
+}
+
+.cafe-back .btn {
+    display: inline-flex;
+    gap: var(--space-2);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   LIGHT MODE
+═══════════════════════════════════════════════════════════════ */
+
+[data-theme="light"] .cafe-hero {
+    background: linear-gradient(180deg, #F8F5EF 0%, #F0EBE3 100%);
+}
+
+[data-theme="light"] .cafe-hero__title {
+    color: var(--text-primary);
+}
+
+[data-theme="light"] .cafe-menu__category {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+[data-theme="light"] .cafe-menu__item {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+[data-theme="light"] .cafe-info {
+    background: var(--bg-tertiary);
+}
+
+[data-theme="light"] .cafe-info__card {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+    .cafe-hero {
+        min-height: 50vh;
+    }
+
+    .cafe-menu__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cafe-info__grid {
+        grid-template-columns: 1fr;
+    }
+}
