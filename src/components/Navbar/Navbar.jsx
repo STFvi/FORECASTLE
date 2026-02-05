@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useTheme } from '../../context/ThemeContext';
 import { useCart } from '../../context/CartContext';
+import JoinModal from '../JoinModal/JoinModal';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -10,6 +11,7 @@ const Navbar = () => {
     const { getCartCount, toggleCart } = useCart(); // Use Cart Context
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [isJoinModalOpen, setIsJoinModalOpen] = useState(false);
 
 
     // Search State
@@ -199,6 +201,21 @@ const Navbar = () => {
                         )}
                     </div>
 
+                    {/* Join Now Button */}
+                    <button
+                        className="navbar__action-btn navbar__join-btn"
+                        onClick={() => setIsJoinModalOpen(true)}
+                        aria-label="Join Now"
+                    >
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                            <path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                            <circle cx="8.5" cy="7" r="4" />
+                            <line x1="20" y1="8" x2="20" y2="14" />
+                            <line x1="23" y1="11" x2="17" y2="11" />
+                        </svg>
+                        <span className="navbar__join-text">Join</span>
+                    </button>
+
                     {/* Theme Toggle */}
                     <button
                         className="navbar__action-btn navbar__theme-toggle"
@@ -276,6 +293,12 @@ const Navbar = () => {
                     </div>
                 </div>
             </nav>
+
+            {/* Join Modal */}
+            <JoinModal
+                isOpen={isJoinModalOpen}
+                onClose={() => setIsJoinModalOpen(false)}
+            />
         </header>
     );
 };

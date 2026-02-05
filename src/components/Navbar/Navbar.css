@@ -187,6 +187,37 @@
     transform: rotate(180deg);
 }
 
+/* Join Button */
+.navbar__join-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    width: auto;
+    padding: var(--space-2) var(--space-4);
+    background: linear-gradient(135deg, var(--color-gold), var(--color-gold-dark));
+    border-radius: var(--radius-full);
+    color: var(--bg-primary) !important;
+    font-weight: var(--font-semibold);
+    transition: all 0.3s ease;
+}
+
+.navbar__join-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(201, 168, 118, 0.4);
+    background: linear-gradient(135deg, var(--color-gold-dark), var(--color-gold));
+}
+
+.navbar__join-text {
+    font-size: var(--text-sm);
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .navbar__join-text {
+        display: inline;
+    }
+}
+
 /* ═══════════════════════════════════════════════════════════════
    SEARCH BAR
 ═══════════════════════════════════════════════════════════════ */
@@ -396,6 +427,15 @@
 [data-theme="light"] .navbar__back-btn:hover {
     background: var(--color-gold-dark);
     color: white;
+}
+
+[data-theme="light"] .navbar__join-btn {
+    background: linear-gradient(135deg, #333333, #1a1a1a);
+    color: #ffffff !important;
+}
+
+[data-theme="light"] .navbar__join-btn:hover {
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* Base Responsive */
